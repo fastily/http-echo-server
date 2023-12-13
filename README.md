@@ -1,5 +1,5 @@
 # http-echo-server
-[![Python 3.9+](https://upload.wikimedia.org/wikipedia/commons/4/4f/Blue_Python_3.9%2B_Shield_Badge.svg)](https://www.python.org)
+[![Python 3.11+](https://upload.wikimedia.org/wikipedia/commons/6/62/Blue_Python_3.11%2B_Shield_Badge.svg)](https://www.python.org)
 [![License: GPL v3](https://upload.wikimedia.org/wikipedia/commons/8/86/GPL_v3_Blue_Badge.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 Simple HTTP echo server that responds back with whatver you sent it in plain text.  Intended as debugging/testing tool.
@@ -11,6 +11,6 @@ Simple HTTP echo server that responds back with whatver you sent it in plain tex
 # from source
 python -m http_echo
 
-# if installed as a package
-http_echo_server
+# prod
+gunicorn -w 2 -b "0.0.0.0" http_echo.__main__:app
 ```

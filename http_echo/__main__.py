@@ -7,6 +7,7 @@ from flask import Flask, request, Response
 _HTTP_METHODS = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', 'PATCH']
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 8 * 1024 * 1024
 
 
 @app.route('/', defaults={'path': ''}, methods=_HTTP_METHODS)

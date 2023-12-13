@@ -17,18 +17,13 @@ setuptools.setup(
     },
     include_package_data=True,
     packages=setuptools.find_packages(include=["http_echo"]),
-    install_requires=['Flask'],
-    entry_points={
-        'console_scripts': [
-            'http_echo_server = http_echo.__main__:_main'
-        ]
-    },
+    install_requires=['Flask', 'gunicorn'],
     classifiers=[
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.9',
+    python_requires='>=3.11',
 )
