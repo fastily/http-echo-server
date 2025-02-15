@@ -16,7 +16,7 @@ setuptools.setup(
         "Bug Tracker": "https://github.com/fastily/http-echo-server/issues",
     },
     include_package_data=True,
-    packages=setuptools.find_packages(include=["http_echo"]),
+    packages=setuptools.find_packages(include=["http_echo_server"]),
     install_requires=['Flask', 'gunicorn'],
     classifiers=[
         "Natural Language :: English",

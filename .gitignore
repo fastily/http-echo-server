@@ -17,6 +17,6 @@ dist
 *.egg-info
 
 # virtualenv
-venv_http_echo
+venv_http_echo_server
 
 scratch.py

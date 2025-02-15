@@ -8,9 +8,9 @@ Simple HTTP echo server that responds back with whatver you sent it in plain tex
 
 ## Run
 ```bash
-# from source
-python -m http_echo
+# start in development mode, visit http://127.0.0.1:8000 to view the web interface
+python -m http_echo_server
 
-# prod
-gunicorn -w 2 -b "0.0.0.0" http_echo.__main__:app
+# run w/ gunicorn, accessible at localhost:8000
+gunicorn -w 2 -b "0.0.0.0" http_echo_server.__main__:app
 ```
