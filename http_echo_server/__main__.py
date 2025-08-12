@@ -35,10 +35,5 @@ def catch_all(path: str) -> Response:
     return Response(s, mimetype='text/plain')
 
 
-def _main() -> None:
-    """Main method, invoked if this script is run directly"""
-    app.run()
-
-
 if __name__ == "__main__":
-    _main()
+    app.run()

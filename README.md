@@ -6,11 +6,14 @@ Simple HTTP echo server that responds back with whatver you sent it in plain tex
 
 👉 The "echoed" body (if a body was included in the original request) will auto-format json and form data for legibility.
 
-## Run
+## Usage
 ```bash
-# start in development mode, visit http://127.0.0.1:8000 to view the web interface
-python -m http_echo_server
+# install dependencies
+uv sync --no-install-project
+
+# start in development mode, available at http://127.0.0.1:5000
+uv run python -m http_echo_server
 
 # run w/ gunicorn, accessible at localhost:8000
-gunicorn -w 2 -b "0.0.0.0" http_echo_server.__main__:app
+uv run gunicorn -w 2 -b "0.0.0.0" http_echo_server.__main__:app
 ```
