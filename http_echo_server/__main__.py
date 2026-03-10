@@ -21,14 +21,14 @@ def catch_all(path: str) -> Response:
     Returns:
         Response: A plain text Response echoing the contents of the user's original request
     """
-    s = f"{request.method} {request.path}{'?' + request.query_string.decode() if request.query_string else ''}\n----\n{str(request.headers).strip()}\n----\n"
+    s = f"{request.method} {request.path}{f"?{request.query_string.decode()}" if request.query_string else ""}\n----\n{str(request.headers).strip()}\n----\n"
 
     if request.is_json:
         s += json.dumps(request.json, indent=4)
     elif request.form:
         s += "\n".join([f"{k} = {v}" for k, v in request.form.items()])
-    elif request.files:
-        s += "binary files were detected in body, obviously can't show them"
+        if request.files:
+            s += "\n[binary files were detected in body, obviously can't show them]"
     elif request.data:
         s += str(request.data)
 
