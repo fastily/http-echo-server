@@ -15,5 +15,5 @@ uv sync --no-install-project
 uv run python -m http_echo_server
 
 # run w/ gunicorn, accessible at localhost:8000
-uv run gunicorn -w 2 -b "0.0.0.0" http_echo_server.__main__:app
+uv run gunicorn -w 2 -b "0.0.0.0" --access-logfile "-" --no-control-socket http_echo_server.__main__:app
 ```
